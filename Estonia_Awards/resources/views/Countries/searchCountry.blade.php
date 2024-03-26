@@ -27,8 +27,16 @@
             <td>{{$country->IndepYear}}</td>
             <td>{{$country->Continent}}</td>
             <td>
-                <a href="{{url('detail/' . $country->Code)}}" title-
+                <a href="{{url('detail/'.$country->Code)}}" title="show">Detail</a>
             </td>
         </tr>
+        @endforeach
     </table>
+
+    @else
+        <p>Data no found</p>
+    @endif
+<br>
+<p>Количество государств: {{count($countries)}}</p>
 </div>
+@endsection
