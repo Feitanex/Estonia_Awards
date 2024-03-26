@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class City extends Model
+{
+
+    protected $table = 'city';
+    public $timetamps = true;
+
+    protected $fillable = [
+        'ID',
+        'Name',
+        'CountryCode',
+        'Population',
+    ];
+}
