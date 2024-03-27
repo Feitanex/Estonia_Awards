@@ -44,17 +44,17 @@
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src='{{ asset("images/profile.jpg")}}' class="user-image" alt="User Image">
-            <span class="hidden-xs"></span><!-- изменить!       --> 
+            <span class="hidden-xs">{{Auth::user()->name}}</span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
               <img src='{{ asset("images/profile.jpg")}}' class="img-circle" alt="User Image">
-              <p></p><!-- изменить!       --> 
+              <p>{{Auth::user()->name}}</p><!-- изменить!       --> 
             </li>
             <li class="user-footer">
               <div class="pull-left">
-                <a href="{{url('/profile/' )}}" class="btn btn-default btn-flat" id="admin_profile">Update</a><!-- изменить!       --> 
+                <a href="{{url('/profile/'.Auth::user()->id )}}" class="btn btn-default btn-flat" id="admin_profile">Update</a><!-- изменить!       --> 
               </div>
               <div class="pull-right">
                 <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Sign out</a>
@@ -76,7 +76,7 @@
         <img src='{{ asset("images/profile.jpg")}}' class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-	  <p></p>  <!-- изменить!       -->    
+	  <p>{{Auth::user()->name}}</p>  <!-- изменить!       -->    
       </div>
     </div>
     <!-- sidebar menu: : style can be found in sidebar.less -->
