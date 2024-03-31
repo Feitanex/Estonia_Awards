@@ -36,8 +36,8 @@
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/') }}" class="navbar-brand">На главную</a></li>
-                    <li><a href="{{ url('/news') }}" class="navbar-brand">Дипломы</a></li>
-                    <li><a href="{{ url('/login') }}" class="navbar-brand">Активации</a></li>
+                    <li><a href="{{ url('/login') }}" class="navbar-brand">Дипломы</a></li>
+                    <li><a href="{{ url('/news') }}" class="navbar-brand">Активации</a></li>
                     <li><a href="{{ url('/register') }}" class="navbar-brand">О нас</a></li>
                 @else
                     <li><a href="{{ url('/dashboard') }}" class="navbar-brand">Admin panel</a></li>
@@ -59,11 +59,19 @@
         @yield('content')
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <span class="text-muted">2024 Laravel News Portal Design&copy; Main site</span>
-        </div>
-    </footer>
-
+        <footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial;">
+            <div class="pull-right hidden-xs">
+                <a style="color: #FFFFFF;">На главную</a><br>
+                <a style="color: #FFFFFF;"></i>Дипломы</a><br>
+                <a style="color: #FFFFFF;">Активации</a></br>
+                <a style="color: #FFFFFF;"></i>О нас</a>
+            </div>
+                <strong>
+                    <a style="color: #FFFFFF;">Связаться</a><br>
+                </strong>
+                <a style="color: #FFFFFF;">ул. Набережная, 1a, Таллинн,11311, Эстония</a><br>
+                <i class="fa fa-comment"></i> <a style="color: #FFFFFF;"> arsenymaz@gmail.com</a><br>
+                <i class="fa fa-users"></i> <a style="color: #FFFFFF;">+372 8 800 555 35 35</a>
+        </footer>
     </body>
 </html>

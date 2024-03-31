@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="container mt-4">
-    <h3 class="text-center mb-4">Новостной портал</h3>
+    <h3 class="text-center mb-4">Активации</h3>
 
     <div class="row">
-        <div class="col-md-4 mb-4">
+        <!-- <div class="col-md-4 mb-4">
             <form action="{{ route('news.filter') }}" method="POST">
                 @csrf
                 <label for="categoryFilter">Фильтр по категории:</label>
@@ -28,7 +28,7 @@
                     @endforeach
                 </select>
             </form>
-        </div>
+        </div> -->
 
         <div class="col-md-8">
             @if(isset($selectCategory))
