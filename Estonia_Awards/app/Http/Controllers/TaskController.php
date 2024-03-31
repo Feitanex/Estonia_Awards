@@ -32,6 +32,30 @@ class TaskController extends Controller
             
         }
     }
+    public function listmenu()
+    {
+        $categories = Category::orderBy('name', 'asc')->get();
+        $tasks = Task::orderBy('created_at', 'desc')->get();
+        $sortinglist = ['all', 'date asc', 'date desc', 'title asc', 'title desc'];
+        return view('tasks.news', compact('tasks', 'categories', 'sortinglist'));
+    }
+    
+    public function newsByCategory(Request $request)
+{
+    $data = $request->all();
+    $categories = Category::orderBy('name', 'asc')->get();
+    $selectCategory = $data['category_id'];
+    $sort = $data['sort'];
+
+    $sortinglist = ['all', 'date_asc', 'date_desc', 'title_asc', 'title_desc'];
+
+    if ($selectCategory == "0" && $sort == "all") {
+        return redirect('/news');
+    } else {
+        $tasks = $this->sortNews($selectCategory, $sort);
+        return view('tasks.news', compact('tasks', 'categories', 'selectCategory', 'sortinglist', 'sort'));
+    }
+}
 
     /**
      * Show the form for creating a new resource.
@@ -40,6 +64,12 @@ class TaskController extends Controller
     {
         $categories=Category::orderBy('name','asc')->get();
         return view('tasks.create', compact('categories'));
+    }
+
+    public function listLimit()
+    {
+        $tasks = Task::orderBy('created_at', 'desc')->take(3)->get();
+        return view('startMainPage', compact('tasks'));
     }
 
     /**
@@ -68,7 +98,7 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        //
+        return view('tasks.detail', compact('task'));
     }
 
     /**
