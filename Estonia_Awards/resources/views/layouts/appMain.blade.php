@@ -36,7 +36,7 @@
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/') }}" class="navbar-brand">На главную</a></li>
-                    <li><a href="{{ url('/register') }}" class="navbar-brand">Дипломы</a></li>
+                    <li><a href="{{ url('/news') }}" class="navbar-brand">Дипломы</a></li>
                     <li><a href="{{ url('/login') }}" class="navbar-brand">Активации</a></li>
                     <li><a href="{{ url('/register') }}" class="navbar-brand">О нас</a></li>
                 @else

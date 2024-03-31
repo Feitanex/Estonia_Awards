@@ -1,63 +1,48 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Project News</title>		
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Project News</title>
-	<!-- Tell the browser to be responsive to screen width -->
-	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-	<!-- Bootstrap 3.3.7 -->
-	<link rel="stylesheet" href='{{ asset("components/bootstrap/dist/css/bootstrap.min.css") }}'>
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href='{{ asset("components/font-awesome/css/font-awesome.min.css") }}'>    
-	<!-- Theme style -->
-	<link rel="stylesheet" href='{{ asset("dist/css/AdminLTE.min.css") }}'>
-	<link rel="stylesheet" href='{{ asset("dist/css/skins/_all-skins.min.css") }}'>  	
-	<!-- Google Font -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-	<!-- Custom style -->
-	<link rel="stylesheet" href='{{ asset("dist/css/custom_style.css") }}'>	
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estonian Awards</title>		
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href='{{ asset("components/bootstrap/dist/css/bootstrap.min.css") }}'>
+  <link rel="stylesheet" href='{{ asset("components/font-awesome/css/font-awesome.min.css") }}'>    
+  <link rel="stylesheet" href='{{ asset("dist/css/AdminLTE.min.css") }}'>
+  <link rel="stylesheet" href='{{ asset("dist/css/skins/_all-skins.min.css") }}'>  	
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href='{{ asset("dist/css/custom_style.css") }}'>	
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <header class="main-header">
-  <!-- Logo -->
-  <a href="{{ url('/dashboard') }}" class="logo"><!--  !!!!!!!!!!!!!!!!-->
-    <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>P</b>N</span>
-    <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Project</b>News</span>
+  <a href="{{ url('/dashboard') }}" class="logo">
+    <span class="logo-mini">EA</span>
+    <span class="logo-lg">Estonian Awards</span>
   </a>
-  <!-- Header Navbar: style can be found in header.less -->
-  <nav class="navbar navbar-static-top">
-    <!-- Sidebar toggle button-->
+  <nav class="navbar navbar-static-top " style="background: linear-gradient(to bottom, #A99A8C, #D9D9D9);">
     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-      <span class="sr-only">Toggle navigation</span>
     </a>
-    <div class="navbar-custom-menu">
+    <div class="navbar-custom-menu" >
       <ul class="nav navbar-nav">
-        <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src='{{ asset("images/profile.jpg")}}' class="user-image" alt="User Image">
-            <span class="hidden-xs">{{Auth::user()->name}}</span><!-- изменить!       --> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+            <img src='{{ asset("images/profile.jpg")}}' class="user-image" alt="User Image" >
+            <span class="hidden-xs" >{{Auth::user()->name}}</span>
           </a>
           <ul class="dropdown-menu">
-            <!-- User image -->
-            <li class="user-header">
+            <li class="user-header"style="background-color: #A99A8C;">
               <img src='{{ asset("images/profile.jpg")}}' class="img-circle" alt="User Image">
-              <p>{{Auth::user()->name}}</p><!-- изменить!       --> 
+              <p>{{Auth::user()->name}}</p>
             </li>
             <li class="user-footer">
-              <div class="pull-left">
-                <a href="{{url('/profile/'.Auth::user()->id)}}" class="btn btn-default btn-flat" id="admin_profile">Update</a><!-- изменить!       --> 
+              <div class="pull-left" >
+                <a href="{{url('/profile/'.Auth::user()->id)}}" class="btn btn-default btn-flat" id="admin_profile" >Редактировать</a>
               </div>
-              <div class="pull-right">
-                <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Sign out</a>
+              <div class="pull-right" >
+                <a href="{{ url('/logout') }}" class="btn btn-default btn-flat">Выйти</a>
               </div>
             </li>
           </ul>
@@ -67,56 +52,40 @@
   </nav>
 </header>		
 	
-<aside class="main-sidebar">
-  <!-- sidebar: style can be found in sidebar.less -->
-  <section class="sidebar">
-    <!-- Sidebar user panel -->
+<aside class="main-sidebar" >
+  <section class="sidebar" >
     <div class="user-panel">
       <div class="pull-left image">
         <img src='{{ asset("images/profile.jpg")}}' class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-	  <p>{{Auth::user()->name}}</p>  <!-- изменить!       -->    
+	  <p>{{Auth::user()->name}}</p>  
       </div>
     </div>
-    <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">REPORTS</li>
-      <li><a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-     
-      <li class="header">MANAGE</li>
+      <li><a href="{{ url('/dashboard') }}"><span>Портфолио</span></a></li>
       @if(Gate::allows('isAdmin') || Gate::allows('isManager'))   
-	
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-barcode"></i>
-          <span>Products</span>
+          <span>Участие</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
-        <ul class="treeview-menu">
-			<li><a href="{{ url('/categorylist') }}"><i class="fa fa-circle-o"></i> Categories</a></li>
-			<li><a href="{{ url('/productlist') }}"><i class="fa fa-circle-o"></i> Product list</a></li>
-         
+        <ul class="treeview-menu" >
+			<li><a href="{{ url('/categorylist') }}"></i> Дипломы</a></li>
+			<li><a href="{{ url('/productlist') }}"></i> Активации  </a></li>
         </ul>
       </li>
     @endif
-    <li><a href="{{ url('/commentslist') }}"><i class="fa fa-comment"></i> Comments list</a></li>
-		@if(Gate::allows('isAdmin'))
-	  <li><a href="{{ url('/users') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>		
-    @endif
+    <li><a href="{{ url('/commentslist') }}">О нас</a></li>
     </ul>
   </section>
-  <!-- /.sidebar -->
 </aside>	
-	
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
+  <div class="content-wrapper"  style="background-color: #D9D9D9;">
+    <section class="content-header" style="text-align: center;">
+      <h1 style="color:#5B5B5B;">
+        Портфолио
       </h1>     
     </section>
 
@@ -128,10 +97,8 @@
       <!-- /.row -->
       <div class="row">
         <div class="col-xs-12">
-          <div class="box">
-			  
+          <div style="background-color: transparent; border: 1px solid black;">
              @yield('content')
-  
           </div>
         </div>
       </div>
@@ -139,16 +106,21 @@
       </section>
       <!-- end right col -->
     </div>
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Project News</b>
-    </div>
-    <strong>IVKHK | Jõhvi | 2022</strong>
+<footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial;">
+  <div class="pull-right hidden-xs">
+      <a style="color: #FFFFFF;">На главную</a><br>
+      <a style="color: #FFFFFF;"></i>Дипломы</a><br>
+      <a style="color: #FFFFFF;">Активации</a></br>
+      <a style="color: #FFFFFF;"></i>О нас</a>
+  </div>
+    <strong>
+      <a style="color: #FFFFFF;">Связаться</a><br>
+    </strong>
+      <a style="color: #FFFFFF;">ул. Набережная, 1a, Таллинн,11311, Эстония</a><br>
+      <i class="fa fa-comment"></i> <a style="color: #FFFFFF;"> arsenymaz@gmail.com</a><br>
+      <i class="fa fa-users"></i> <a style="color: #FFFFFF;">+372 8 800 555 35 35</a>
 </footer>
 </div>
-<!-- ./wrapper -->
-	
-	
 <!-- jQuery 3 -->
 <script src='{{ asset("components/jquery/dist/jquery.min.js") }}'></script>
 <!-- jQuery UI 1.11.4 -->
