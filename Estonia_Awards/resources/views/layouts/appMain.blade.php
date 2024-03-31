@@ -10,6 +10,9 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("/components/css/style.css") }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-default">
@@ -29,13 +32,6 @@
                 <li><a class="navbar-brand" href="{{ url('/') }}">Home</a></li>
                 <li><a class="navbar-brand" href="{{ url('/news') }}">News</a></li>
             </ul>
-            <form action="{{ url('search') }}" method="GET" class="navbar-form navbar-right">
-                <div class="form-group">
-                    <label for="searchQuery">Search:</label>
-                    <input type="text" name="searchQuery" id="searchQuery" class="form-control" value="{{ $searchQuery ?? '' }}">
-                </div>
-                <button type="submit" class="btn btn-primary">Search</button>
-
                 @if(isset($sortinglist))
                     @foreach ($sortinglist as $option)
                         <input type="hidden" name="sort" value="{{ $option }}">
@@ -74,9 +70,5 @@
         <span class="text-muted">2024 Laravel News Portal Design&copy; Main site</span>
     </div>
 </footer>
-
-<!-- JavaScripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>

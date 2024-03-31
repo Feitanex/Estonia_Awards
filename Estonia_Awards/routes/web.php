@@ -23,6 +23,12 @@ Route::get('/show/{task}', [TaskController::class,'show']);
 Route::get('/news', [TaskController::class, 'listmenu'])->name('news.list');
 Route::post('newsBycategory', [TaskController::class, 'newsByCategory'])->name('news.filter');
 
+Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register.form');
+Route::post('/register', [UserController::class, 'register'])->name('register');
+
+Route::get('/search/', [CategoryController::class, 'search']);
+Route::get('/catalog/{search}', [CategoryController::class, 'catalog']);
+
 // Route::get('/', function () {
 //     return view('startMainPage');
 // });

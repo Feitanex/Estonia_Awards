@@ -24,9 +24,6 @@ class CategoryController extends Controller
         return view('categories.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([

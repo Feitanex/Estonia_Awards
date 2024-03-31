@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Hash; 
-use Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -30,6 +30,28 @@ class UserController extends Controller
             $users = User::where('role', 'LIKE', $data['role'])->get();
             return view('users.index', compact('users','roles','selectRole'));
         }
+    }
+    public function showRegistrationForm()
+    {
+        return view('users.register');
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users|max:255',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => 'user', // Default role for new users
+        ]);
+
+        return redirect()->route('register.form')->with('success', 'Registration successful! Please log in.');
     }
 
     /**
@@ -86,7 +108,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255'
         ]);
-        if(!isset($request->role )) $request->role=Auth::user()->role;
+        if(!isset($request->role))$request->role=Auth::user()->role;
         if ($request->password) {
             $request->validate([
                 'password' => 'required|string|min:6|confirmed',
