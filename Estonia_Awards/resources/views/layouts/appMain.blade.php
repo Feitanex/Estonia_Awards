@@ -25,7 +25,7 @@
             </div>
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a class="navbar-brand ">Estonian Awards</a></li>
+                <li><strong class="navbar-brand" style="font-family:Courier New; font-size:25px;">Estonian Awards</strong></li>
             </ul>
                 @if(isset($sortinglist))
                     @foreach ($sortinglist as $option)
@@ -35,12 +35,12 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
-                    <li><a href="{{ url('/') }}" class="navbar-brand">На главную</a></li>
-                    <li><a href="{{ url('/login') }}" class="navbar-brand">Дипломы</a></li>
-                    <li><a href="{{ url('/news') }}" class="navbar-brand">Активации</a></li>
-                    <li><a href="{{ url('/register') }}" class="navbar-brand">О нас</a></li>
+                    <li><a href="{{ url('/') }}" class="navbar-brand" style="font-family:Courier New;">На главную</a></li>
+                    <li><a href="{{ url('/login') }}" class="navbar-brand" style="font-family:Courier New;">Дипломы</a></li>
+                    <li><a href="{{ url('/news') }}" class="navbar-brand" style="font-family:Courier New;">Активации</a></li>
+                    <li><a href="{{ url('/register') }}" class="navbar-brand" style="font-family:Courier New;">О нас</a></li>
                 @else
-                    <li><a href="{{ url('/dashboard') }}" class="navbar-brand">Admin panel</a></li>
+                    <li><a href="{{ url('/dashboard') }}" class="navbar-brand" style="font-family:Courier New;">Admin panel</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -55,7 +55,7 @@
     </div>
 </nav>
 
-    <div class="content" style="min-height: 450px; height: 100%;">
+    <div class="content" style=" min-height: 450px; height: 100%; ">
         @yield('content')
     </div>
 

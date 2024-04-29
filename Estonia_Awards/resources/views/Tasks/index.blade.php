@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="box-header with-border">
-	<h3 class="box-title"><strong> News List manage</strong></h3>
 	<div class="add">
 	<a href="addtask" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
 	</div>

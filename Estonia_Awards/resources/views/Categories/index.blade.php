@@ -2,9 +2,6 @@
 
 @section('content')
 
-<div class="box-header with-border">
-    <h3 class="box-tittle"><strong> Categories manage</strong></h3>
-</div>
 <div class="box-body">
     <div class="add">
         <a href="addcategory" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
@@ -12,8 +9,8 @@
     <div class="container">
         <table id="example1" class="table table-bordered">
             <thead>
-                <th>Category Name</th>
-                <th>Tools</th>
+                <th>Название категории</th>
+                <th>Действия</th>
             </thead>
             <tbody>
                 @foreach ($categories as $category)
