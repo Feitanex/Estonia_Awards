@@ -13,18 +13,19 @@
 
             <ul class="list-group">
                 @php
-                    $totalTasks = 0; // Инициализация переменной для подсчета общего количества задач
+                    $totalTasks = 0;
                 @endphp
 
                 @forelse ($tasks as $task)
-                    <li class="list-group-item">
-                        <img src="{{ asset('images/' . $task->image) }}" class="card-img-top" alt="{{ $task->title }}" style="max-height: 200px; object-fit: cover;">
-                        <p><strong>{{ $task->title }}</strong></p>
-                        <p>Категория: {{ optional($task->category)->name }}</p>
-                        <p>Обновлено: {{ $task->updated_at->format('d.m.Y H:i') }}</p>
-                        <p class="commentscount"><span class="spancomment">Количество комментариев:</span> {{ $task->comments ? count($task->comments) : 0 }}</p>
-                        <a href="{{ url('show/' . $task->id) }}">Подробнее</a>
-                    </li>
+                    <div style="border:solid 1px; width:30%;">
+                        <div>
+                            <img src="{{ asset('images/' . $task->image) }}" class="card-img-top" alt="{{ $task->title }}" style="max-height: 200px; object-fit: cover;">
+                            <p><strong>{{ $task->title }}</strong></p>
+                            <p>Категория: {{ optional($task->category)->name }}</p>
+                            <p>Обновлено: {{ $task->updated_at->format('d.m.Y H:i') }}</p>
+                            <a href="{{ url('show/' . $task->id) }}">Подробнее</a>
+                        </div>
+                    </div>
 
                     @php
                         $totalTasks++; // Увеличиваем счетчик задач на каждой итерации цикла
