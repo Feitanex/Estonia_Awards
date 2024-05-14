@@ -36,7 +36,7 @@
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::guest())
                     <li><a href="{{ url('/') }}" class="navbar-brand" style="font-family:Courier New;">На главную</a></li>
-                    <li><a href="{{ url('/') }}" class="navbar-brand" style="font-family:Courier New;">Дипломы</a></li>
+                    <li><a href="{{ url('/diplom') }}" class="navbar-brand" style="font-family:Courier New;">Дипломы</a></li>
                     <li><a href="{{ url('/news') }}" class="navbar-brand" style="font-family:Courier New;">Активации</a></li>
                     <li><a href="{{ url('/info') }}" class="navbar-brand" style="font-family:Courier New;">О нас</a></li>
                 @else
@@ -63,7 +63,7 @@
         <div style=" margin-left:-2%; margin-top: -1.5%;position: relative; width: 100vw; height: 130px; background: linear-gradient(to bottom, #D9D9D9, #A99A8C);"></div>
             <div class="pull-right hidden-xs" style="font-size:20px; font-family:Courier New; color:white; margin-top: 3%;">
                 <a href="{{ url('/') }}" style="color: #FFFFFF;">На главную</a><br>
-                <a style="color: #FFFFFF;"></i>Дипломы</a><br>
+                <a href="{{ url('/diplom') }}" style="color: #FFFFFF;"></i>Дипломы</a><br>
                 <a href="{{ url('/news') }}" style="color: #FFFFFF;">Активации</a></br>
                 <a href="{{ url('/info') }}" style="color: #FFFFFF;"></i>О нас</a>
             </div>

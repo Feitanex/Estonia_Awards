@@ -106,6 +106,10 @@ class TaskController extends Controller
     {
         return view('tasks.info', compact('task'));
     }
+    public function diplom(Task $task)
+    {
+        return view('tasks.diplom', compact('task'));
+    }
 
     /**
      * Show the form for editing the specified resource.
