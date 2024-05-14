@@ -7,7 +7,9 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ActivationController;
 
+use App\Models\Activation;
 use App\Models\Category;
 use App\Models\Task;
 use App\Models\User;
@@ -22,6 +24,13 @@ Route::get('/show/{task}', [TaskController::class,'show']);
 
 Route::get('/diplom', [TaskController::class, 'diplom']);
 Route::get('/info', [TaskController::class, 'info']);
+Route::get('/activation', [TaskController::class, 'activation']);
+
+Route::get('/activations', [ActivationController::class, 'index']);
+
+
+Route::get('/activation', [ActivationController::class, 'index']);
+    
 
 Route::get('/news', [TaskController::class, 'listmenu'])->name('news.list');
 Route::post('newsBycategory', [TaskController::class, 'newsByCategory'])->name('news.filter');

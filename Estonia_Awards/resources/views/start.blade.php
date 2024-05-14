@@ -2,8 +2,8 @@
 
 @section('content')
 	<hr>
-	<div class="login-box">
-		<div class="login-box-body">
+	<div class="login-box" style=" border-radius: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);">
+		<div class="login-box-body" style="border-radius: 20px;">
 @if(session()->has('error'))
 <div class="alert alert-danger">{{session()->get('error')}}</div>
 @endif
