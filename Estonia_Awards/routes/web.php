@@ -20,6 +20,8 @@ Route::get('/', [TaskController::class, 'listLimit' ]);
 
 Route::get('/show/{task}', [TaskController::class,'show']);
 
+Route::get('/info', [TaskController::class, 'info']);
+
 Route::get('/news', [TaskController::class, 'listmenu'])->name('news.list');
 Route::post('newsBycategory', [TaskController::class, 'newsByCategory'])->name('news.filter');
 

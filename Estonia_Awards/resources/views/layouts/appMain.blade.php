@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
-<body id="app-layout">
+<body id="app-layout" style="background-color:#D9D9D9;">
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -38,7 +38,7 @@
                     <li><a href="{{ url('/') }}" class="navbar-brand" style="font-family:Courier New;">На главную</a></li>
                     <li><a href="{{ url('/') }}" class="navbar-brand" style="font-family:Courier New;">Дипломы</a></li>
                     <li><a href="{{ url('/news') }}" class="navbar-brand" style="font-family:Courier New;">Активации</a></li>
-                    <li><a href="{{ url('/') }}" class="navbar-brand" style="font-family:Courier New;">О нас</a></li>
+                    <li><a href="{{ url('/info') }}" class="navbar-brand" style="font-family:Courier New;">О нас</a></li>
                 @else
                     <li><a href="{{ url('/dashboard') }}" class="navbar-brand" style="font-family:Courier New;">Admin panel</a></li>
                     <li class="dropdown">
@@ -59,20 +59,22 @@
         @yield('content')
     </div>
 
-        <footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial;">
-        <div style="position: absolute; top: 243%; left: 0%; width:1903px; height:130px; background: linear-gradient(to bottom, #D9D9D9,#A99A8C );"></div>
-            <div class="pull-right hidden-xs">
-                <a style="color: #FFFFFF;">На главную</a><br>
+    <footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial; height: 36vh;">
+        <div style=" margin-left:-2%; margin-top: -1.5%;position: relative; width: 100vw; height: 130px; background: linear-gradient(to bottom, #D9D9D9, #A99A8C);"></div>
+            <div class="pull-right hidden-xs" style="font-size:20px; font-family:Courier New; color:white; margin-top: 3%;">
+                <a href="{{ url('/') }}" style="color: #FFFFFF;">На главную</a><br>
                 <a style="color: #FFFFFF;"></i>Дипломы</a><br>
-                <a style="color: #FFFFFF;">Активации</a></br>
-                <a style="color: #FFFFFF;"></i>О нас</a>
+                <a href="{{ url('/news') }}" style="color: #FFFFFF;">Активации</a></br>
+                <a href="{{ url('/info') }}" style="color: #FFFFFF;"></i>О нас</a>
             </div>
-                <strong>
-                    <a style="color: #FFFFFF;">Связаться</a><br>
-                </strong>
-                <a style="color: #FFFFFF;">ул. Набережная, 1a, Таллинн,11311, Эстония</a><br>
-                <i class="fa fa-comment"></i> <a style="color: #FFFFFF;"> arsenymaz@gmail.com</a><br>
-                <i class="fa fa-users"></i> <a style="color: #FFFFFF;">+372 8 800 555 35 35</a>
+            <div style="font-size:20px; font-family:Courier New; color:white; margin-top: 2%;">
+                <a style="color: #FFFFFF; font-size:25px; font-family:Courier New;">Связаться</a><br>
+                <div style="margin-top:1%;">
+                    <i class="fa fa-building"></i> <a style="color: #FFFFFF;">ул. Набережная, 1a, Таллинн,11311, Эстония</a><br>
+                    <i class="fa fa-comment"></i> <a style="color: #FFFFFF;"> arsenymaz@gmail.com</a><br>
+                    <i class="fa fa-users"></i> <a style="color: #FFFFFF;">+372 8 800 555 35 35</a>
+                </div>
+            </div>
         </footer>
     </body>
 </html>
