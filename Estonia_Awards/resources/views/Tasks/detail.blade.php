@@ -11,7 +11,7 @@
             <p class="card-text"><strong>Description:</strong> {{ $task->description }}</p>
             <p class="card-text"><strong>Created at:</strong> {{ $task->created_at->format('d.m.Y H:i') }}</p>
             <p class="card-text"><strong>Updated at:</strong> {{ $task->updated_at->format('d.m.Y H:i') }}</p>
-            <a href="/news" class="btn btn-primary"> Вернуться назад</a>
+            <a href="/news" class="btn btn-primary" style="background-color:#A99A8C; border:transparent;"> Вернуться назад</a>
         </div>
     </div>
 </div>

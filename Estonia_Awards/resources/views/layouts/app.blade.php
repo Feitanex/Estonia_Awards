@@ -22,8 +22,8 @@
   <div class="wrapper">
     <header class="main-header">
     <a href="{{ url('/dashboard') }}" class="logo">
-      <span class="logo-mini">EA</span>
-      <span class="logo-lg">Estonian Awards</span>
+      <span class="logo-mini">QA</span>
+      <span class="logo-lg">QRZ Active</span>
     </a>
   <nav class="navbar navbar-static-top " style="background: linear-gradient(to bottom, #A99A8C, #D9D9D9);">
     <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -105,7 +105,7 @@
       </section>
     </div>
   <div style="height:90px; background: linear-gradient(to bottom, #D9D9D9, #A99A8C);"></div>
-<footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial;">
+<footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial; border:transparent;">
   <div class="pull-right hidden-xs">
       <a style="color: #FFFFFF;" href="{{ url('/dashboard') }}">На главную</a><br>
       <a style="color: #FFFFFF;" href="{{ url('/categorylist') }}"></i>Дипломы</a><br>
