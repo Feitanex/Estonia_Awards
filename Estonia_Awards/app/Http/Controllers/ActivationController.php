@@ -14,7 +14,7 @@ class ActivationController extends Controller
     public function index()
     {
         $activations = Activation::orderBy('title','asc')->get();
-        return view('activations.info', compact('activations'));
+        return view('activations.index', compact('activations'));
     }
 
     /**
@@ -45,25 +45,29 @@ class ActivationController extends Controller
     {
         //
     }
+    
+    public function activation(Activation $activation)
+    {
+        $activations = Activation::all();
+        return view('Activations.activation', compact('activations'));
+    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Activation $activation)
+    public function edit($id)
     {
+        $activation = Activation::find($id);
         return view('activations.edit', compact('activation'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Activation $activation)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'name'=>'required'
-        ]);
-        $activation->update($request->all());
-        return redirect('/activationlist');
+        $activation = Activation::find($id);
+        $activation->title = $request->name;
+        $activation->description = $request->description;
+        $activation->save();
+        return redirect('/activationlist')->with('success', 'Новость успешно обновлена');
     }
 
     /**

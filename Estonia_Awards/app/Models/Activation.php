@@ -9,11 +9,10 @@ class Activation extends Model
 {
     use HasFactory;
     protected $table = 'activations';
-    public $timestamps = true;
+    public $timestamps = false;
 
     protected $fillable = [
         'title',
         'description',
-        'created_at'
     ];
 }

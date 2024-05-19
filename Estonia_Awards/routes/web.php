@@ -23,12 +23,10 @@ Route::get('/show/{task}', [TaskController::class,'show']);
 
 Route::get('/diplom', [TaskController::class, 'diplom']);
 Route::get('/info', [TaskController::class, 'info']);
-Route::get('/activation', [TaskController::class, 'activation']);
 
+Route::get('/activation', [ActivationController::class, 'activation']);
 Route::get('/activations', [ActivationController::class, 'index']);
-
-Route::get('/activation', [ActivationController::class, 'index']);
-    
+Route::get('/activations', [ActivationController::class, 'activation']);
 
 Route::get('/news', [TaskController::class, 'listmenu'])->name('news.list');
 Route::post('newsBycategory', [TaskController::class, 'newsByCategory'])->name('news.filter');

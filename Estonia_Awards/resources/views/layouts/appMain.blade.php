@@ -62,9 +62,10 @@
 
     <footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial; height: 36vh;">
         <div style=" margin-left:-2%; margin-top: -1.5%;position: relative; width: 100vw; height: 130px; background: linear-gradient(to bottom, #D9D9D9, #A99A8C);"></div>
-            <div class="pull-right hidden-xs" style="font-size:20px; font-family:Courier New; color:white; margin-top: 3%;">
+            <div class="pull-right hidden-xs" style="font-size:20px; font-family:Courier New; color:white; margin-top: 2%;">
                 <a href="{{ url('/') }}" style="color: #FFFFFF;">На главную</a><br>
                 <a href="{{ url('/diplom') }}" style="color: #FFFFFF;"></i>Дипломы</a><br>
+                <a href="{{ url('/activation') }}" style="color: #FFFFFF;"></i>Новости</a><br>
                 <a href="{{ url('/news') }}" style="color: #FFFFFF;">Активации</a></br>
                 <a href="{{ url('/info') }}" style="color: #FFFFFF;"></i>О нас</a>
             </div>

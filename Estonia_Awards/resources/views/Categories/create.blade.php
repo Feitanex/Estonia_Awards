@@ -13,7 +13,7 @@
         <form action="{{ url('addcategory')}}" method="POST" class="form-horizontal">
             {{csrf_field()}}
             <div class="form-group">
-                <label for="task-name" class="col-sm-3 control-label">Категрия:</label>
+                <label for="task-name" class="col-sm-3 control-label">Категория:</label>
                 <div class="com-sm-6">
                     <input type="text" name="name" id="category-name" class="form-control" value="">
                 </div>

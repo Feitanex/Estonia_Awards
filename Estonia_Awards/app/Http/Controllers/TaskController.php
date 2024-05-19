@@ -100,8 +100,6 @@ class TaskController extends Controller
     {
         return view('tasks.detail', compact('task'));
     }
-
-
     public function info(Task $task)
     {
         return view('tasks.info', compact('task'));
@@ -109,10 +107,6 @@ class TaskController extends Controller
     public function diplom(Task $task)
     {
         return view('tasks.diplom', compact('task'));
-    }
-    public function activation(Task $task)
-    {
-        return view('tasks.activation', compact('task'));
     }
 
     /**

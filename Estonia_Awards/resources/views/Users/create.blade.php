@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="box-header with-border">
-    <h3 class="box-title"><strong> Users manage - Add New User</strong></h3>
+    <h3 class="box-title"><strong> Добавление пользователя</strong></h3>
     <div class="add">
         <a href="/users" class="btn btn-primary btn-sm btn-flat">
-            <i class="fa fa-backward"></i> Back to list
+            <i class="fa fa-backward"></i>  Вернуться назад
         </a>
     </div>
 </div>
@@ -13,25 +13,24 @@
 <div class="box-body">
     <div class="container">
         <div class="col-lg-9 margin-tb">
-            @include('common.errors') <!-- Вывод ошибок -->
-            
+            @include('common.errors')
             <form action="{{ url('adduser') }}" method="POST" class="form-horizontal">
-                {{ csrf_field() }} <!-- CSRF токен -->
+                {{ csrf_field() }}
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Name:</strong>
-                        <input type="text" name="name" class="form-control" placeholder="Name">
+                        <strong>Имя:</strong>
+                        <input type="text" name="name" class="form-control" placeholder="Имя">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Email:</strong>
-                        <input type="email" name="email" class="form-control" placeholder="Email">
+                        <strong>Почта:</strong>
+                        <input type="email" name="email" class="form-control" placeholder="Почта">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Role:</strong>
+                        <strong>Роль:</strong>
                         <select name="role" class="form-control">
                             @foreach ($roles as $role)
                                 <option value="{{ $role }}"
@@ -43,18 +42,18 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Password:</strong>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <strong>Пароль:</strong>
+                        <input type="password" name="password" class="form-control" placeholder="Пароль">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Confirm Password:</strong>
-                        <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password">
+                        <strong>Подтвердите пароль:</strong>
+                        <input type="password" name="password_confirmation" class="form-control" placeholder="Подтвердите пароль">
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Add New User</button>
+                    <button type="submit" class="btn btn-primary">Добавить нового пользователя</button>
                 </div>
             </form>
         </div>

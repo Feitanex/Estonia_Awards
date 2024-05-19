@@ -3,18 +3,16 @@
 @section('content')
 
 <div class="box-header with-border">
-	<h3 class="box-title"><strong>Users manage</strong></h3>
 	<div class="add">
-		<a href="adduser" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i>New user</a>
+		<a href="adduser" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Создать нового пользователя</a>
 	</div>
-	<!-- Форма для фильтрации данных по ролям -->
 	<div class="pull-right">
 		<form class="form-inline" action="{{ url('userByrole') }}" method="POST">
 			@csrf
 			<div class="form-group">
-				<label>Role: </label>
+				<label>Роль: </label>
 				<select class="form-control input-sm" name="role" onChange=submit();>
-					<option value="0">All</option>
+					<option value="0">Все</option>
 					@foreach ($roles as $role)
 						<option value="{{$role}}" 
 							@if(isset($selectRole) && $role==$selectRole)
@@ -33,11 +31,11 @@
 	@if (count($users ?? '') > 0)
 		<table class="table table-bordered">
 			<thead>
-				<th width=3%>N/#</th>
-				<th width="20%">Name</th> 
-				<th>Email</th> 
-				<th>Role</th> 
-				<th>Tools</th>
+				<th width=3%>No</th>
+				<th width="20%">Имя</th> 
+				<th>Почта</th> 
+				<th>Роль</th> 
+				<th>Действия</th>
 			</thead>
 			<tbody>
 				@foreach($users as $user)
@@ -48,7 +46,7 @@
 						<td>{{ $user->role }}</td> 
 						<td>
 							<a href="{{url('edituser/' . $user->id)}}" class='btn btn-success btn-sm edit btn-flat'>
-								<i class='fa fa-edit'></i> Edit
+								<i class='fa fa-edit'></i> Редактировать
 							</a>
 						</td>
 					</tr>
@@ -56,7 +54,7 @@
 			</tbody>
 		</table>				 
 	@else
-		<p>Data not found</p>
+		<p>Не найдено</p>
 	@endif
 </div>
 @endsection

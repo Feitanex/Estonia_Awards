@@ -75,9 +75,10 @@
           </span>
         </a>
         <ul class="treeview-menu" >
-			<li><a href="{{ url('/categorylist') }}"></i> Категории</a></li>
+      <li><a href="{{ url('/categorylist') }}"></i> Категории</a></li>
 			<li><a href="{{ url('/productlist') }}"></i> Активации</a></li>
-      <li><a href="{{ url('/activationlist') }}"></i> Новости</a></li>
+      <li><a href="{{ url('/activationlist') }}"></i> Новости</a></li>		
+      <li><a href="{{ url('/users') }}"></i> Пользователи</a></li>
         </ul>
       </li>
     @endif      
@@ -107,10 +108,11 @@
   <div style="height:90px; background: linear-gradient(to bottom, #D9D9D9, #A99A8C);"></div>
 <footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial; border:transparent;">
   <div class="pull-right hidden-xs">
-      <a style="color: #FFFFFF;" href="{{ url('/dashboard') }}">На главную</a><br>
-      <a style="color: #FFFFFF;" href="{{ url('/categorylist') }}"></i>Дипломы</a><br>
-      <a style="color: #FFFFFF;" href="{{ url('/productlist') }}">Активации</a></br>
-      <a style="color: #FFFFFF;" href="{{ url('/comentlist') }}"></i>О нас</a>
+    <a href="{{ url('/') }}" style="color: #FFFFFF;">На главную</a><br>
+    <a href="{{ url('/diplom') }}" style="color: #FFFFFF;"></i>Дипломы</a><br>
+    <a href="{{ url('/activation') }}" style="color: #FFFFFF;"></i>Новости</a><br>
+    <a href="{{ url('/news') }}" style="color: #FFFFFF;">Активации</a></br>
+    <a href="{{ url('/info') }}" style="color: #FFFFFF;"></i>О нас</a>
   </div>
     <strong>
       <a style="color: #FFFFFF;">Связаться</a><br>
