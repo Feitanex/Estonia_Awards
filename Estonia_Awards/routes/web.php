@@ -6,7 +6,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ActivationController;
 
 use App\Models\Activation;
@@ -27,7 +26,6 @@ Route::get('/info', [TaskController::class, 'info']);
 Route::get('/activation', [TaskController::class, 'activation']);
 
 Route::get('/activations', [ActivationController::class, 'index']);
-
 
 Route::get('/activation', [ActivationController::class, 'index']);
     
@@ -58,6 +56,22 @@ Route::middleware('manager')->group(function () {
         Route::post ('/editcategory/{category}', [CategoryController::class, 'update']);
 
         Route::delete ('/deletecategory/{category}', [CategoryController::class, 'destroy']);
+
+        Route::get ('/activationlist', [ActivationController::class, 'index']);
+        Route::get ('/addactivation', [ActivationController::class, 'create']);
+        Route::post ('/addactivation', [ActivationController::class, 'store'])->name('addactivation');
+
+        Route::get ('/editactivation/{activation}', [ActivationController::class, 'edit']);
+        Route::post ('/editactivation/{activation}', [ActivationController::class, 'update']);
+
+        Route::delete ('/deleteactivation/{activation}', [ActivationController::class, 'destroy']);
+
+
+
+
+
+
+
 
         Route::get('/productlist', [TaskController::class,'index']);
 

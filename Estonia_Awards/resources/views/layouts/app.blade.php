@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Estonian Awards</title>		
+    <title>Qrz Active</title>		
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -76,8 +76,8 @@
         </a>
         <ul class="treeview-menu" >
 			<li><a href="{{ url('/categorylist') }}"></i> Категории</a></li>
-
-			<li><a href="{{ url('/productlist') }}"></i> Активации  </a></li>
+			<li><a href="{{ url('/productlist') }}"></i> Активации</a></li>
+      <li><a href="{{ url('/activationlist') }}"></i> Новости</a></li>
         </ul>
       </li>
     @endif      
@@ -115,9 +115,9 @@
     <strong>
       <a style="color: #FFFFFF;">Связаться</a><br>
     </strong>
-      <a style="color: #FFFFFF;">ул. Набережная, 1a, Таллинн,11311, Эстония</a><br>
+      <i class="fa fa-building"></i><a style="color: #FFFFFF;"> ул. Набережная, 1a, Таллинн,11311, Эстония</a><br>
       <i class="fa fa-comment"></i> <a style="color: #FFFFFF;"> arsenymaz@gmail.com</a><br>
-      <i class="fa fa-users"></i> <a style="color: #FFFFFF;">+372 8 800 555 35 35</a>
+      <i class="fa fa-users"></i> <a style="color: #FFFFFF;"> +372 8 800 555 35 35</a>
     </footer>
 </div>
 </body>

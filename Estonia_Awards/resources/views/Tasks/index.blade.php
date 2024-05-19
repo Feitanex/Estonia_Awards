@@ -3,17 +3,16 @@
 @section('content')
 <div class="box-header with-border">
 	<div class="add">
-	<a href="addtask" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+	<a href="addtask" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Создать новую локицию</a>
 	</div>
-<!--    форма список категорий для фильтрации данных          -->
   <div class="pull-right">
 	<form class="form-inline" action="{{ url('productBycategory') }}" method="POST">
 	  @csrf
 	  <div class="form-group">
-		<label>Category: </label>
+		<label>Категории: </label>
 		<select class="form-control input-sm"  name="category_id" onChange=submit();>
 			
-			<option value="0">All</option>
+			<option value="0">Все</option>
 			 @foreach ($categories as $category)
 				<option value="{{ $category->id}}" 
 				@if(isset($selectCategory) && $category->id==$selectCategory) selected @endif
@@ -29,36 +28,31 @@
 	@if (count($tasks ?? '') > 0)
 	<table class="table table-bordered">
 		<thead>
-		  <th width=3%>N/#</th>
-		  <th width="20%">Title</th> 
-		  <th>Category</th> 
-		  <th>Date Updated</th>                 
-		  <th>Tools</th>
+		  <th width=3%>No</th>
+		  <th width="20%">Заголовок</th> 
+		  <th>Описание</th>
+		  <th>Категория</th> 
+		  <th>Дата обновления</th>                 
+		  <th>Действия</th>
 		</thead>
 		<tbody>
 		@foreach($tasks as $task)
 			<tr>
 				<td>{{ $task->id }}</td>
-                <td>{{ $task->title }}</td>	
+                <td>{{ $task->title }}</td>
+				<td> {{ $task->description}} </td>
 				<td>{{ $task->category_id }} - {{$task->category->name}}</td>    
 				<td>{{ $task->updated_at->format('d.m.Y') }}</td>                            
 				<td>
-				  <a href="{{url('edittask/' . $task->id)}}" class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i> Edit</a>
-				   <a href="{{url('deletetask/' . $task->id)}}" class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Delete</a> 				   
-				   
+				  	<a href="{{url('edittask/' . $task->id)}}" class='btn btn-success btn-sm edit btn-flat'><i class='fa fa-edit'></i> Редактировать</a>
+				   	<a href="{{url('deletetask/' . $task->id)}}" class='btn btn-danger btn-sm delete btn-flat'><i class='fa fa-trash'></i> Удалить</a> 				   
 				</td>
 			</tr>
-			<tr>
-				<th>Description</th>
-				<td colspan=4>
-					{{ $task->description}}
-				</td>
-			</tr> 
 		@endforeach
 		</tbody>
 	</table>				 
 	@else
-		<p>Data no found</p>
+		<p>Не найдено</p>
 	@endif
 </div>
 @endsection

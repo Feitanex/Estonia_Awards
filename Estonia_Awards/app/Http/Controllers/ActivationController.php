@@ -14,7 +14,7 @@ class ActivationController extends Controller
     public function index()
     {
         $activations = Activation::orderBy('title','asc')->get();
-        return view('activations.index', compact('activations'));
+        return view('activations.info', compact('activations'));
     }
 
     /**
@@ -22,7 +22,7 @@ class ActivationController extends Controller
      */
     public function create()
     {
-        //
+        return view('activations.create');
     }
 
     /**
@@ -30,7 +30,12 @@ class ActivationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+        Activation::create($request->all());
+        return redirect('/activationlist');
     }
 
     /**
@@ -46,7 +51,7 @@ class ActivationController extends Controller
      */
     public function edit(Activation $activation)
     {
-        //
+        return view('activations.edit', compact('activation'));
     }
 
     /**
@@ -54,7 +59,11 @@ class ActivationController extends Controller
      */
     public function update(Request $request, Activation $activation)
     {
-        //
+        $request->validate([
+            'name'=>'required'
+        ]);
+        $activation->update($request->all());
+        return redirect('/activationlist');
     }
 
     /**
@@ -62,6 +71,7 @@ class ActivationController extends Controller
      */
     public function destroy(Activation $activation)
     {
-        //
+        $activation->delete();
+        return redirect('/activationlist');
     }
 }

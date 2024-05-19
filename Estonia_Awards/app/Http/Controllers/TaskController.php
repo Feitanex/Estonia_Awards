@@ -120,7 +120,8 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        $categories = Category::all();
+        return view('tasks.edit', compact('task', 'categories'));
     }
 
     /**

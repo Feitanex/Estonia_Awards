@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="box-header with-border">
-	<h3 class="box-title"><strong> Tasks manage - Edit task</strong></h3>
+	<h3 class="box-title"><strong> Изменить локацию</strong></h3>
 	<div class="add">
-	<a href="/productlist" class="btn btn-primary btn-sm btn-flat"> <i class="fa fa-backward"></i> Back to list</a>
+	<a href="/productlist" class="btn btn-primary btn-sm btn-flat"> <i class="fa fa-backward"></i> Вернутся к списку</a>
 	</div>
 
 </div>
@@ -26,20 +26,20 @@
 			@csrf			
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<strong>Title:</strong>
-					<input type="text" name="title" class="form-control" placeholder="Title" value="{{ $task->title }}">
+					<strong>Заголовок:</strong>
+					<input type="text" name="title" class="form-control" placeholder="Заголовок" value="{{ $task->title }}">
 				</div>
 			</div>			
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<strong>Description:</strong>
+					<strong>Описание:</strong>
 					<textarea class="form-control" style="height:50px" name="description"
-						placeholder="Description">{{ $task->description }}</textarea>
+						placeholder="Описание">{{ $task->description }}</textarea>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<strong>Category:</strong>
+					<strong>Категория:</strong>
 				<select name="category_id" class="form-control" >															
 					@foreach ($categories as $category) 						
 						<option value="{{$category->id}}"
@@ -47,28 +47,24 @@
                             selected
                             @endif >{{$category->name}}</option>						
 					@endforeach
-					  
 				</select>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<strong>Image:</strong>
+					<strong>Изображение:</strong>
 				  <input type="file" name="image"  class="form-control" value="">  
 				</div>
 			</div>	
-            <!-- Добавляем поле для отображения текущего изображения -->
-<div class="col-xs-12 col-sm-12 col-md-12">
-    <div class="form-group">
-        <strong>Old Image:</strong>
-        <img src="{{ asset('images/' . $task->image) }}" alt="Old Image" style="max-width: 200px;">
-        <!-- Здесь предполагается, что ваши изображения хранятся в public/images -->
-    </div>
-</div>
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="form-group">
+					<strong>Старая изображение:</strong>
+					<img src="{{ asset('images/' . $task->image) }}" alt="Old Image" style="max-width: 200px;">
+				</div>
+			</div>
 
-					
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<button type="submit" class="btn btn-primary">Save task</button>
+				<button type="submit" class="btn btn-primary">Сохранить изменения</button>
 			</div>			
 		</form>
 		</div>

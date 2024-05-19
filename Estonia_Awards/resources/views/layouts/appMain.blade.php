@@ -41,13 +41,13 @@
                     <li><a href="{{ url('/news') }}" class="navbar-brand" style="font-family:Courier New;">Активации</a></li>
                     <li><a href="{{ url('/info') }}" class="navbar-brand" style="font-family:Courier New;">О нас</a></li>
                 @else
-                    <li><a href="{{ url('/dashboard') }}" class="navbar-brand" style="font-family:Courier New;">Admin panel</a></li>
+                    <li><a href="{{ url('/dashboard') }}" class="navbar-brand" style="font-family:Courier New;">Профиль</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                         </ul>
                     </li>
                 @endif
