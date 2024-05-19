@@ -34,7 +34,7 @@
                 @empty
                     <div class="col-12">
                         <div class="alert alert-warning" role="alert">
-                            Новости не найдены.
+                            Активации не найдены.
                         </div>
                     </div>
                 @endforelse

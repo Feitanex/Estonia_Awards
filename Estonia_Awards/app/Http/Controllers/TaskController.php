@@ -18,6 +18,12 @@ class TaskController extends Controller
         $tasks = Task::orderBy('created_at', 'desc')->get();
         return view('tasks.index', compact('tasks','categories'));
     }
+    public function dashboard()
+    {
+        $tasks = Task::all();
+        return view('dashboard', compact('tasks'));
+    }
+    
 
     public function taskByCategory(Request $request){
         $data=$request->all();
