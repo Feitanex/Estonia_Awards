@@ -119,6 +119,10 @@ class TaskController extends Controller
         $tasks = Task::with('category')->orderBy('created_at', 'desc')->take(4)->get();
         return view('Tasks.portfolio', compact('tasks'));
     }
+    public function zakaz(Task $task)
+    {
+        return view('tasks.zakaz', compact('task'));
+    }
 
     /**
      * Show the form for editing the specified resource.

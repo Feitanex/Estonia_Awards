@@ -36,6 +36,7 @@ Route::post('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/search/', [CategoryController::class, 'search']);
 Route::get('/catalog/{search}', [CategoryController::class, 'catalog']);
+Route::get('/zakaz', [TaskController::class, 'zakaz']);
 
 // Route::get('/', function () {
 //     return view('startMainPage');
