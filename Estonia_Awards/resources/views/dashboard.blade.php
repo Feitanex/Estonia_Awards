@@ -3,7 +3,7 @@
 @section('content')
 <div class="box-body" style="min-height: 450%;">
 <h1 style="color:#5B5B5B; font-family:Courier New;">
-    Добро пожаловать
+    Добро пожаловать!
       </h1>  
     <div><br>
         @can ( 'isAdmin')

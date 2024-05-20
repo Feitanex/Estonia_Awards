@@ -116,7 +116,8 @@ class TaskController extends Controller
     }
     public function portfolio(Task $task)
     {
-        return view('tasks.portfolio', compact('task'));
+        $tasks = Task::with('category')->orderBy('created_at', 'desc')->take(4)->get();
+        return view('Tasks.portfolio', compact('tasks'));
     }
 
     /**
@@ -150,6 +151,11 @@ class TaskController extends Controller
     $task->update($data);
     return redirect('/productlist');
     }
+    public function showDashboard() {
+        $tasks = Task::all(); // Или ваш метод получения данных
+        return view('dashboard', compact('tasks'));
+    }
+    
 
     /**
      * Remove the specified resource from storage.

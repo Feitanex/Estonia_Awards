@@ -3,7 +3,7 @@
 @section('content')
 <div class="box-header with-border">
 	<div class="add">
-	<a href="addtask" class="btn btn-primary btn-sm btn-flat" style="font-family:Courier New;"><i class="fa fa-plus"></i> Создать новую локицию</a>
+	<a href="addtask" class="btn btn-primary btn-sm btn-flat" style="border-radius: 98px; background-color:#ABA49D; border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);"><i class="fa fa-plus"></i> Создать новую локицию</a>
 	</div>
   <div class="pull-right">
 	<form class="form-inline" action="{{ url('productBycategory') }}" method="POST">
@@ -44,8 +44,8 @@
 				<td style="font-family:Courier New;">{{ $task->category_id }} - {{$task->category->name}}</td>    
 				<td style="font-family:Courier New;">{{ $task->updated_at->format('d.m.Y') }}</td>                            
 				<td>
-				  	<a href="{{url('edittask/' . $task->id)}}" class='btn btn-success btn-sm edit btn-flat' style="font-family:Courier New;"><i class='fa fa-edit'></i> Редактировать</a>
-				   	<a href="{{url('deletetask/' . $task->id)}}" class='btn btn-danger btn-sm delete btn-flat' style="font-family:Courier New;"><i class='fa fa-trash'></i> Удалить</a> 				   
+				  	<a href="{{url('edittask/' . $task->id)}}" class='btn btn-success btn-sm edit btn-flat' style="border-radius: 98px;  border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);"><i class='fa fa-edit'></i> Редактировать</a>
+				   	<a href="{{url('deletetask/' . $task->id)}}" class='btn btn-danger btn-sm delete btn-flat' style="border-radius: 98px;  border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);"><i class='fa fa-trash'></i> Удалить</a> 				   
 				</td>
 			</tr>
 		@endforeach

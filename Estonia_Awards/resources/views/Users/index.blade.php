@@ -4,7 +4,7 @@
 
 <div class="box-header with-border">
 	<div class="add">
-		<a href="adduser" class="btn btn-primary btn-sm btn-flat" style="font-family:Courier New;"><i class="fa fa-plus"></i> Создать нового пользователя</a>
+		<a href="adduser" class="btn btn-primary btn-sm btn-flat" style="border-radius: 98px; background-color:#ABA49D; border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);"><i class="fa fa-plus"></i> Создать нового пользователя</a>
 	</div>
 	<div class="pull-right">
 		<form class="form-inline" action="{{ url('userByrole') }}" method="POST">
@@ -45,7 +45,7 @@
 						<td style="font-family:Courier New;">{{ $user->email }}</td>    
 						<td style="font-family:Courier New;">{{ $user->role }}</td> 
 						<td style="font-family:Courier New;">
-							<a href="{{url('edituser/' . $user->id)}}" class='btn btn-success btn-sm edit btn-flat'>
+							<a href="{{url('edituser/' . $user->id)}}" class='btn btn-success btn-sm edit btn-flat' style="border-radius: 98px;border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
 								<i class='fa fa-edit'></i> Редактировать
 							</a>
 						</td>

@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="container mt-5" style="background-color: white; border-radius: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); width: 30%;">
+<div class="container mt-5" style="background-color: white; border-radius: 20px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); width: 30%; margin-top:5%;">
     <div>
         <div>
             <div>
-                <div style=" margin-top:4%; margin-bottom: 4%;font-family:Courier New;"class="card-header text-center"><c>Регистрация</c></div>
+                <div style=" margin-top:4%; margin-bottom: 4%;font-family:Courier New;font-size:18px"class="card-header text-center"><c>Регистрация</c></div>
 
                 <div class="card-body">
                     @if(session('success'))

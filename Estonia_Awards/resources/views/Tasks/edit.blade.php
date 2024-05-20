@@ -4,7 +4,7 @@
 <div class="box-header with-border">
 	<h3 class="box-title" style="font-family:Courier New;"><strong> Изменить локацию</strong></h3>
 	<div class="add">
-	<a href="/productlist" class="btn btn-primary btn-sm btn-flat" style="font-family:Courier New;"> <i class="fa fa-backward"></i> Вернутся к списку</a>
+	<a href="/productlist" class="btn btn-primary btn-sm btn-flat" style="border-radius: 98px; background-color:#ABA49D; border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);"> <i class="fa fa-backward"></i> Вернуться к списку</a>
 	</div>
 
 </div>
@@ -64,7 +64,9 @@
 			</div>
 
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<button style="font-family:Courier New;" type="submit" class="btn btn-primary">Сохранить изменения</button>
+				<button type="submit" class="btn btn-default" style="border-radius: 98px;border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);">
+					<i class="fa fa-btn fa-plus"></i> Обновить локацию
+				</button>			
 			</div>			
 		</form>
 		</div>

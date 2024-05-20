@@ -25,7 +25,7 @@
             </div>
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><strong class="navbar-brand" style="font-family:Courier New; font-size:25px;">QRZ Active</strong></li>
+                <li><c class="navbar-brand" style="font-size:25px;font-family:Courier New;color:black;">QRZ Active</c></li>
             </ul>
                 @if(isset($sortinglist))
                     @foreach ($sortinglist as $option)
@@ -43,11 +43,11 @@
                 @else
                     <li><a href="{{ url('/dashboard') }}" class="navbar-brand" style="font-family:Courier New;">Профиль</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <a style="font-size:18px; font-family:Courier New;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
+                            <li><a style="font-size:18px; font-family:Courier New;" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Выйти</a></li>
                         </ul>
                     </li>
                 @endif
@@ -60,17 +60,17 @@
         @yield('content')
     </div>
 
-    <footer class="main-footer" style="background-color: #A99A8C; padding: 20px; font-family: Arial; height: 36vh;">
+    <footer class="main-footer" style="font-size:18px; background-color: #A99A8C; padding: 20px; font-family: Arial; height: 36vh;">
         <div style=" margin-left:-2%; margin-top: -1.5%;position: relative; width: 100vw; height: 130px; background: linear-gradient(to bottom, #D9D9D9, #A99A8C);"></div>
-            <div class="pull-right hidden-xs" style="font-size:20px; font-family:Courier New; color:white; margin-top: 2%;">
+            <div class="pull-right hidden-xs" style="font-family:Courier New; color:white; margin-top: 2%;">
                 <a href="{{ url('/') }}" style="color: #FFFFFF;">На главную</a><br>
                 <a href="{{ url('/diplom') }}" style="color: #FFFFFF;"></i>Дипломы</a><br>
                 <a href="{{ url('/activation') }}" style="color: #FFFFFF;"></i>Новости</a><br>
                 <a href="{{ url('/news') }}" style="color: #FFFFFF;">Активации</a></br>
                 <a href="{{ url('/info') }}" style="color: #FFFFFF;"></i>О нас</a>
             </div>
-            <div style="font-size:20px; font-family:Courier New; color:white; margin-top: 2%;">
-                <a style="color: #FFFFFF; font-size:25px; font-family:Courier New;">Связаться</a><br>
+            <div style=" font-family:Courier New; color:white; margin-top: 2%;">
+                <a style="color: #FFFFFF; font-family:Courier New;">Связаться</a><br>
                 <div style="margin-top:1%;">
                     <i class="fa fa-building"></i> <a style="color: #FFFFFF;">ул. Набережная, 1a, Таллинн,11311, Эстония</a><br>
                     <i class="fa fa-comment"></i> <a style="color: #FFFFFF;"> arsenymaz@gmail.com</a><br>

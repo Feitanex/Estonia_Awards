@@ -7,7 +7,7 @@
 @if(session()->has('error'))
 <div class="alert alert-danger">{{session()->get('error')}}</div>
 @endif
-		<p class="login-box-msg" style="font-family:Courier New;">Войти в систему</p>
+		<p class="login-box-msg" style="font-family:Courier New;font-size:18px">Войти в систему</p>
 		<form action="{{ url('login') }}" method="POST">
 		@csrf
 			<div class="form-group has-feedback">
