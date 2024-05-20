@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $categories=Category::orderBy('name','asc')->get();
@@ -23,8 +20,6 @@ class TaskController extends Controller
         $tasks = Task::all();
         return view('dashboard', compact('tasks'));
     }
-    
-
     public function taskByCategory(Request $request){
         $data=$request->all();
         $categories=Category::orderBy('name','asc')->get();
@@ -62,10 +57,6 @@ class TaskController extends Controller
         return view('tasks.news', compact('tasks', 'categories', 'selectCategory', 'sortinglist', 'sort'));
     }
 }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $categories=Category::orderBy('name','asc')->get();
@@ -77,10 +68,6 @@ class TaskController extends Controller
         $tasks = Task::orderBy('created_at', 'desc')->take(3)->get();
         return view('startMainPage', compact('tasks'));
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -98,10 +85,6 @@ class TaskController extends Controller
         }
         return redirect('/productlist');
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Task $task)
     {
         return view('tasks.detail', compact('task'));
@@ -123,19 +106,11 @@ class TaskController extends Controller
     {
         return view('tasks.zakaz', compact('task'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Task $task)
     {
         $categories = Category::all();
         return view('tasks.edit', compact('task', 'categories'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Task $task)
     {
         $request->validate([
@@ -159,11 +134,6 @@ class TaskController extends Controller
         $tasks = Task::all(); // Или ваш метод получения данных
         return view('dashboard', compact('tasks'));
     }
-    
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Task $task)
     {
         $task->delete();
