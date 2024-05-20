@@ -6,42 +6,17 @@
     <div class="card">
         <img src="{{ asset('images/' . $task->image) }}" style="width: 500px; height: 300px;" class="card-img-top" alt="{{ $task->title }}">
         <div class="card-body">
-            <h2 class="card-title">{{ $task->title }}</h2>
-            <p class="card-text"><strong>Category:</strong> {{ $task->category->name }}</p>
-            <p class="card-text"><strong>Description:</strong> {{ $task->description }}</p>
-            <p class="card-text"><strong>Created at:</strong> {{ $task->created_at->format('d.m.Y H:i') }}</p>
-            <p class="card-text"><strong>Updated at:</strong> {{ $task->updated_at->format('d.m.Y H:i') }}</p>
-            <a href="/news" class="btn btn-primary" style="background-color:#A99A8C; border:transparent;"> Вернуться назад</a>
+            <h2 style="font-family:Courier New;"class="card-title">{{ $task->title }}</h2>
+            <p style="font-family:Courier New;" class="card-text"><strong>Category:</strong> {{ $task->category->name }}</p>
+            <p style="font-family:Courier New;" class="card-text"><strong>Description:</strong> {{ $task->description }}</p>
+            <p style="font-family:Courier New;" class="card-text"><strong>Created at:</strong> {{ $task->created_at->format('d.m.Y H:i') }}</p>
+            <p style="font-family:Courier New;" class="card-text"><strong>Updated at:</strong> {{ $task->updated_at->format('d.m.Y H:i') }}</p>
+            <a href="/news" class="btn btn-primary" style="border-radius: 98px;background-color:#ABA49D ; border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); font-family:Courier New;"> Вернуться назад</a>
         </div>
     </div>
 </div>
 
-<hr>
-@if (Auth::check())
-    <div class="container">
-        <div class="col-sm-10">
-            <div class="panel panel-default">
-                <div class="panel-heading"><h4>Comments Add</h4></div>
-                <div class="panel-body">
-                    <form action="{{url('comments')}}" method="POST">
-                        {{ csrf_field() }}
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <strong>Comment text <i>{1000 symbols}</i>:</strong>
-                                    <textarea class="form-control" style="height:50px" name="body" required></textarea>
-                                </div>
-                            </div>
-                            <input type="hidden" name="taskid" value="{{ $task->id }}" class="form-control" placeholder="newsId" readonly>
-                            <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary">Send comment</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-@endif
+<hr style="border:transparent;">
+
 
 @endsection

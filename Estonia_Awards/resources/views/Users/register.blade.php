@@ -6,7 +6,7 @@
     <div>
         <div>
             <div>
-                <div style=" margin-top:4%; margin-bottom: 4%;"class="card-header text-center"><c>Регистрация</c></div>
+                <div style=" margin-top:4%; margin-bottom: 4%;font-family:Courier New;"class="card-header text-center"><c>Регистрация</c></div>
 
                 <div class="card-body">
                     @if(session('success'))
@@ -20,7 +20,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input id="name" placeholder="Имя" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name"style="font-family:Courier New;"  placeholder="Имя" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -31,7 +31,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input id="email" placeholder="Почта" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" style="font-family:Courier New;" placeholder="Почта" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -42,7 +42,7 @@
 
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input id="password" placeholder="Пароль" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="password" style="font-family:Courier New;" placeholder="Пароль" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -53,13 +53,13 @@
 
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input id="password-confirm" placeholder="Подтвердите пароль"type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" style="font-family:Courier New;" placeholder="Подтвердите пароль"type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" style="background-color:#ABA49D; border-color:#ABA49D;">
+                                <button type="submit" class="btn btn-primary" style="border-radius: 98px;background-color:#ABA49D ; border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); font-family:Courier New;">
                                     {{ __('Зарегистрироваться') }}
                                 </button>
                             </div>

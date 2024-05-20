@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="container mt-4">
-    <h3 class="text-center mb-4">Активации</h3>
+    <h3 class="text-center mb-4" style="font-family:Courier New;">Активации</h3>
 
-    <div class="row" style="margin-top:15%;">
+    <div class="row" style="margin-top:10%;">
         <div class="col-md-12">
             @if(isset($selectCategory))
                 <h4>Текущая категория: {{ $categories->find($selectCategory)->name ?? 'Все категории' }}</h4>
@@ -21,10 +21,10 @@
                         <div class="card h-150 border mb-3" style="margin-bottom: 20px; padding: 10px; border: 1px solid; border-radius: 15px 15px 15px 15px; height:400px;">
                             <img src="{{ asset('images/' . $task->image) }}" class="card-img-top" alt="{{ $task->title }}" style="max-height: 200px; object-fit: cover;">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $task->title }}</h5>
-                                <p class="card-text">Категория: {{ optional($task->category)->name }}</p>
-                                <p class="card-text"><small class="text-muted">Обновлено: {{ $task->updated_at->format('d.m.Y H:i') }}</small></p>
-                                <a href="{{ url('show/' . $task->id) }}" class="btn btn-primary" style="background-color:#A99A8C; border:transparent;">Подробнее</a>
+                                <h5 style="font-family:Courier New;" class="card-title">{{ $task->title }}</h5>
+                                <p style="font-family:Courier New;" class="card-text">Категория: {{ optional($task->category)->name }}</p>
+                                <p style="font-family:Courier New;" class="card-text"><small class="text-muted">Обновлено: {{ $task->updated_at->format('d.m.Y H:i') }}</small></p>
+                                <a href="{{ url('show/' . $task->id) }}" class="btn btn-primary" style="border-radius: 98px;background-color:#ABA49D ; border:transparent; font-family:Courier New; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); font-family:Courier New;">Подробнее</a>
                             </div>
                         </div>
                     </div>

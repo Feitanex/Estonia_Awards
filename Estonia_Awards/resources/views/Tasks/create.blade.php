@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="box-header with-border">
-	<h3 class="box-title"><strong> Добавить локацию</strong></h3>
+	<h3 class="box-title" style="font-family:Courier New;"><strong> Добавить локацию</strong></h3>
 	<div class="add">
-	<a href="productlist" class="btn btn-primary btn-sm btn-flat"> <i class="fa fa-backward"></i> Вернуться назад</a>
+	<a href="productlist" class="btn btn-primary btn-sm btn-flat" style="font-family:Courier New;"> <i class="fa fa-backward"></i> Вернуться назад</a>
 	</div>
 
 </div>
@@ -14,7 +14,7 @@
         <div class="col-lg-9 margin-tb">
 			@if ($errors->any())
 				<div class="alert alert-danger">
-					<strong>Ошибка!</strong> 
+					<strong style="font-family:Courier New;">Ошибка!</strong> 
 					<ul>
 						@foreach ($errors->all() as $error)
 							<li></li>
@@ -26,21 +26,21 @@
 			@csrf			
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<strong>Заголовок:</strong>
-					<input type="text" name="title" class="form-control" placeholder="Заголовок">
+					<strong style="font-family:Courier New;">Заголовок:</strong>
+					<input style="font-family:Courier New;"type="text" name="title" class="form-control" placeholder="Заголовок">
 				</div>
 			</div>			
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<strong>Описание:</strong>
-					<textarea class="form-control" style="height:50px" name="description"
+					<strong style="font-family:Courier New;">Описание:</strong>
+					<textarea style="font-family:Courier New;"class="form-control" style="height:50px" name="description"
 						placeholder="Описание"></textarea>
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<strong>Категория:</strong>
-				<select name="category_id" class="form-control" >															
+					<strong style="font-family:Courier New;">Категория:</strong>
+				<select style="font-family:Courier New;" name="category_id" class="form-control" >															
 					@foreach ($categories as $category) 						
 						<option value="{{$category->id}}" >{{$category->name}}</option>						
 					@endforeach
@@ -50,12 +50,12 @@
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<strong>Изображение:</strong>
-				  <input type="file" name="image"  class="form-control" value="">  
+					<strong style="font-family:Courier New;">Изображение:</strong>
+				  <input type="file" name="image"  class="form-control" value="" style="font-family:Courier New;">  
 				</div>
 			</div>						
 			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<button type="submit" class="btn btn-primary">Сохранить локацию</button>
+				<button type="submit" class="btn btn-primary" style="font-family:Courier New;">Сохранить локацию</button>
 			</div>			
 		</form>
 		</div>

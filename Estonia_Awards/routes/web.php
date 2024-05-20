@@ -43,6 +43,7 @@ Route::get('/catalog/{search}', [CategoryController::class, 'catalog']);
 Route::group(['middleware'=>['auth']],function(){
 
 Route::get ('/dashboard', [Controller::class, 'dashboard'])->name('dashboard');
+Route::get ('/portfolio', [TaskController::class, 'portfolio']);
 
 Route::middleware('manager')->group(function () {
 
